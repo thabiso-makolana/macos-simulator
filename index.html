@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madlib OS</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <img src="./images/apple-64.png" alt="Apple Logo" class="apple-load">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+    <div id="desktop">
+        <div id="topbar" class="glass-effect">
+            <div class="topbar-left">
+                <span class="menu-item"><img src="images/apple-logo.png" id="nav-logo" alt=""></span>
+                <span class="menu-item">Finder</span>
+                <span class="menu-item">File</span>
+                <span class="menu-item">Edit</span>
+                <span class="menu-item">View</span>
+                <span class="menu-item">Go</span>
+                <span class="menu-item">Window</span>
+                <span class="menu-item">Help</span>
+            </div>
+            <div class="topbar-right">
+                <span class="menu-item"><img src="./images/control.webp" alt="" id="nav-control"></span>
+                <span class="menu-item">Mon Jun 03 12:10 PM</span>
+            </div>
+        </div>
+        <div id="contextMenu" class="context-menu">
+            <ul>
+                <li>New Folder</li>
+                <li>Get Info</li>
+                <li>Change Desktop Background</li>
+                <li>Use Stacks</li>
+                <li>Sort By</li>
+                <li>Clean Up</li>
+                <li>Clean Up By</li>
+                <li>Show View Options</li>
+            </ul>
+        </div>
+        <div id="other" class="window calendarIframe">
+            <div class="titlebar">
+                <span class="close" onclick="closeWindow('other')"></span>
+                <span class="yellow"></span>
+                <span class="green"></span>
+            </div>
+            <div class="content" id="calendarIframe">
+                <iframe src="./iframes/calendar.html" style="border: 0" width="100%"
+                    height="100%"></iframe>
+            </div>
+        </div>
+        <div id="terminal" class="window terminalIframe">
+            <div class="titlebar">
+                <span class="close" onclick="closeWindow('terminal')"></span>
+                <span class="yellow"></span>
+                <span class="green"></span>
+            </div>
+            <div class="content" id="terminalIframe">
+                <iframe src="./iframes/terminal.html" style="border: 0" width="100%"
+                    height="100%"></iframe>
+            </div>
+        </div>
+        <div id="chrome" class="window chromeIframe">
+            <div class="titlebar">
+                <span class="close" onclick="closeWindow('chrome')"></span>
+                <span class="yellow"></span>
+                <span class="green"></span>
+            </div>
+            <div class="content" id="chromeIframe">
+                <iframe src="./iframes/madlib.html" style="border: 0" width="100%"
+                    height="100%"></iframe>
+                    <div class="resizer"></div>
+            </div>
+        </div>
+        <div id="dock" class="glass-effect">
+            <div class="dock-item">
+                <img src="images/FinderBigSur.png" alt="Calendar">
+            </div>
+            <hr>
+            <div class="dock-item" onclick="openWindow('other')">
+                <img src="images/941b3852f089696217cabe420c7a459f.png" alt="Calendar">
+            </div>
+            <div class="dock-item" onclick="openWindow('terminal')">
+                <img src="images/Terminalicon2.png" alt="Calendar">
+            </div>
+            <div class="dock-item" onclick="openWindow('chrome')">
+                <img src="images/Google_Chrome_icon_(February_2022).svg" alt="chrome">
+            </div>
+           
+            <div class="dock-item">
+                <img src="images/Visual_Studio_Icon_2022.svg" alt="code">
+            </div>
+            <div class="dock-item" onclick="openWindow('calendarWindow')">
+                <img src="images/Apple_Music_icon.svg" alt="music">
+            </div>
+            <div class="dock-item" onclick="openWindow('calendarWindow')">
+                <img src="images/GitHub_Invertocat_Logo.svg" alt="github">
+            </div>
+            <div class="dock-item" onclick="openWindow('calendarWindow')">
+                <img src="images/App_Store_(iOS).svg" alt="appstore">
+            </div>
+            <div class="dock-item" onclick="openWindow('calendarWindow')">
+                <img src="images/Adobe_Acrobat_DC_logo_2020.svg" alt="youtube">
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

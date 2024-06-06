@@ -1,0 +1,53 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+  background-image: url("../images/white-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+h1{
+  width: 100%;
+  /* height: 100px; */
+  color: #393e41;
+  text-align: center;
+  font-size: 6rem;
+  font-family: "Happy Monkey", system-ui;
+}
+.container{
+  display: flex;
+  /* height: 70vh; */
+  width: 100%;
+  justify-content: space-between;
+}
+.madLibsEdit{
+  width: 47%;
+}
+.madLibsEdit input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 1px;
+  padding: 5px;
+}
+.madLibsPreview {
+  font-weight: bold;
+  width: 47%;
+}
+
+input:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 8px rgba(102, 175, 233, .6);
+}
+
+@media (max-width: 450px) {
+  h1{
+    font-size: 2rem;
+  }
+  .container {
+    flex-direction: column;
+  }
+}
