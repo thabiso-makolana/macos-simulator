@@ -37,7 +37,6 @@ This project simulates an Apple Mac OS desktop environment using HTML, CSS, and 
 
 
 ### JavaScript
-  ```
 - **Event Listeners**: Used to handle user interactions, such as opening and closing windows, dragging elements, and displaying the context menu.
 
 - **Window Management Functions**: Functions like `openWindow`, `closeWindow`, and `bringToFront` control the display and z-index of different windows.
@@ -59,4 +58,3 @@ This project is licensed under the MIT License.
 
 ## Contact
 For any questions or feedback, please reach out to makolanathabiso@gmail.com.
----
