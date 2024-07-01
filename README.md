@@ -1,76 +1,62 @@
-# Re:Coded Mad Libz
+# Apple Mac OS Virtual Web Desktop Environment Simulator
 
-## What is Mad Libs?
+## Overview
+This project simulates an Apple Mac OS desktop environment using HTML, CSS, and JavaScript. It features interactive windows, a draggable and resizable interface, and a simulated loading screen. This project aims to replicate the user experience of a Mac OS desktop within a web browser.
 
-See [wikipedia](https://en.wikipedia.org/wiki/Mad_Libs). Yes, I know this section is short, do not skip this, **please read what Mad Libs is or the rest of this will make no sense**. In normal mad libs, you usually just insert the word, but in this version, it's more like a "fill in the blank" of an existing story.
+![image](https://github.com/thabiso-makolana/macos-simulator/assets/165550448/0210b34a-33ec-443a-a89e-c978839ef36c)
 
-## Instructions
+## Features
+- Simulated loading screen
+- Interactive top bar with functional menu items
+- Draggable and resizable windows
+- Context menu for desktop interactions
+- Dock with clickable icons to open various windows
 
-#### This is an individual project. Each student will work on the project on their own. Keeping in mind that you can always help each other out but every student needs to have their own repository.
+## Technologies Used
+- **HTML**: Structure and layout of the web desktop environment.
+- **CSS**: Styling for the desktop environment, including animations and effects.
+- **JavaScript**: Functionality for interactive features like window management, drag-and-drop, and context menus.
 
-### Write a story
+## Installation
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/mac-os-simulator.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd mac-os-simulator
+    ```
+3. Open `index.html` in your preferred web browser.
 
-In `story.txt`, you'll find a brief story **that you need to replace with your own**. By the way, for the purposes of [parsing](https://en.wikipedia.org/wiki/Parsing), you're only allowed to use periods and commas as grammar.
+## Key Web Concepts
 
-Confusingly, you should write out the full story, although the "blanks" will be anywhere a grammar part is denoted. The reason for this will be apparent later in some of the extra challenges.
+### HTML
+- **Structure and Layout**: The HTML file (`index.html`) provides the basic structure for the simulated desktop, including a top bar, desktop area, dock, and various windows. Each interactive element is defined with appropriate HTML tags and IDs for styling and functionality.
+- **Loading Screen**: A loading screen is implemented using a `div` element with an image and a progress bar to simulate the boot-up process of Mac OS.
+- ![image](https://github.com/thabiso-makolana/macos-simulator/assets/165550448/c90a2d95-5248-423d-b978-dddf16ba39c2)
 
-For example:
 
-- `Louis[n]`: normally it says Louis, but the user should replace it with a _noun_
-- `went[v]`: normally it says went, but the user should replace it with a _verb_
-- `[a]` for adjective...
+### JavaScript
+  ```
+- **Event Listeners**: Used to handle user interactions, such as opening and closing windows, dragging elements, and displaying the context menu.
 
-Note that when you write a story, the period and commas should go after the part of speech, e.g., `Louis[n].` (NOT `Louis.[n]`).
+- **Window Management Functions**: Functions like `openWindow`, `closeWindow`, and `bringToFront` control the display and z-index of different windows.
+![image](https://github.com/thabiso-makolana/macos-simulator/assets/165550448/8e8914ce-11fb-46cc-ba9b-054b7d70a998)
 
-### Code
+- **Drag-and-Drop Functionality**: Implemented to allow users to move windows around the desktop.
 
-In this project, you will be using HTML, CSS, and JS in unison in order to create a variant of a Mad Libs game with the story of your choice.
+- **Context Menu**: Displays a custom context menu when the user right-clicks on the desktop.
+![image](https://github.com/thabiso-makolana/macos-simulator/assets/165550448/1f8cf417-5185-4148-9974-a555eaf106e2)
 
-Below, we discuss the requirements. We use the word "input" to refer to the blanks in the Mad Libs story.
+## Usage
+- Open the project in a web browser to see the simulated Mac OS environment.
+- Interact with the desktop by clicking on the dock icons to open various windows.
+- Drag and resize the windows as you would in a real OS.
+- Right-click on the desktop to access the context menu.
 
-Here is a very, very simple visual example of what it might look like; however, all styling is at your liberty in this project.
+## License
+This project is licensed under the MIT License.
 
-### Barebones Example
-
-![Example](https://i.imgur.com/ZRNvFC7.png)
-
-#### Functional requirements
-
-0. **Parsing the story:** I've already written some code for you that reads in the file `story.txt` into a string. However, you need to process it into a format that will allow you to keep track of "blanks." See `madlibs.js` for further instructions. You will likely want to [read about regular expressions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/) (yes, this is extra expected reading :) ). It's possible, but annoying, to do this without regular expressions.
-
-1. **Showing the story:** It should show **two copies** of the story. In one copy ("edit view"),
-   all words in the story with blanks (e.g., `Louis[n]`, `went[v]`, ...) are replaced with inputs. This should be in `div.madLibsEdit`. In the second copy ("preview"), it should show the same story, but formatted prettily (without the blanks!). Refer to the example picture above.
-
-2. **Hotkeys:** When the user presses `Enter` in an input, it should move the cursor to the next input in the story.
-
-3. **Constraining user inputs:** An input should be allowed to have a maximum of 20 characters.
-
-4. **Live update:** Whenever the user updates a blank in the edit view, it should update the preview any time a new character is typed (hint: this is handling an event of sorts). The user should **not** have to click a button in order to update the preview.
-
-5. **Story length:** Your story should have at least 10 blanks.
-
-#### Styling requirements
-
-0. **Responsiveness:** When the screen is small, the story should take the full width of the screen. When the screen is larger, as on a computer. Values "small" and "large" are up to you to decide.
-
-1. **Flexbox:** Use at least one flexbox.
-
-2. **Highlighting currently focused input:** There should be three possible styles of inputs (style is a vague word here, they just need to be distinguishable to the user):
-
-- currently highlighted input (if the user is typing in one)
-- filled out input (the user has already put a word there -- might require JS here ;) )
-- empty input (the user has not already put a word there).
-
-#### Bonus
-
-These are completely optional. They are also a bit more challenging. If you
-finish early and have time, you may feel free to add these to your work.
-
-0. **Save progress:** When the user closes the app, their progress in the
-   inputs should be saved even when they reopen the page. Search for local storage.
-
-1. **Translation:** Use the `i18next` JavaScript library to support another
-   language for your mad libs app. Note that the story should be exactly the
-   same, but translated, and the positions of the inputs will likely be
-   different. Instead of story.txt, you will store the story as a similar string
-   (see the library), and add a button to the page to toggle languages.
+## Contact
+For any questions or feedback, please reach out to makolanathabiso@gmail.com.
+---
